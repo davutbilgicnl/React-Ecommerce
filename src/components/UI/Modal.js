@@ -1,8 +1,8 @@
 import styles from "./Modal.module.css";
 import { createPortal } from "react-dom";
 
-function Backdrop() {
-  return <div className={styles.backdrop}></div>;
+function Backdrop({ onCloseCart }) {
+  return <div className={styles.backdrop} onClick={onCloseCart}></div>;
 }
 
 function ModalOverlay({ children }) {
@@ -16,10 +16,10 @@ function ModalOverlay({ children }) {
 const portalElement = document.getElementById("overlays");
 // const portalElement = document.body;
 
-export default function Modal({ children }) {
+export default function Modal({ children, ...props }) {
   return createPortal(
     <>
-      <Backdrop />
+      <Backdrop {...props} />
       <ModalOverlay>{children}</ModalOverlay>
     </>,
     portalElement
