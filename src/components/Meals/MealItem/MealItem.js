@@ -1,7 +1,7 @@
 import styles from "./MealItem.module.css";
 import MealItemForm from "./MealItemForm";
 
-export default function MealItem({ name, description, price }) {
+export default function MealItem({ id, name, description, price }) {
   const _price = `$${price.toFixed(2)}`;
   return (
     <li className={styles.meal}>
