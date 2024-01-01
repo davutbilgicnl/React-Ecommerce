@@ -11,7 +11,7 @@ export default function MealItem({ id, name, description, price }) {
         <div className={styles.price}>{_price}</div>
       </div>
       <div>
-        <MealItemForm />
+        <MealItemForm id={id} />
       </div>
     </li>
   );
